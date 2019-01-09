@@ -1,8 +1,10 @@
 # -*- coding: utf8 -*-
+
 import json
 import socket
 from collections import OrderedDict
 from time import sleep
+
 import requests
 
 from agency.agency_tools import proxy
@@ -154,9 +156,11 @@ class HTTPClient(object):
                             logger.log(
                                 u"出参：{0}".format(response.content))
                         if urls["is_json"]:
-                            return json.loads(response.content.decode() if isinstance(response.content, bytes) else response.content)
+                            return json.loads(
+                                response.content.decode() if isinstance(response.content, bytes) else response.content)
                         else:
-                            return response.content.decode("utf8", "ignore") if isinstance(response.content, bytes) else response.content
+                            return response.content.decode("utf8", "ignore") if isinstance(response.content,
+                                                                                           bytes) else response.content
                     else:
                         logger.log(
                             u"url: {} 返回参数为空".format(urls["req_url"]))

@@ -1,6 +1,8 @@
-# coding:utf-8
-import requests
+# -*- coding: utf-8 -*-
+
 from hashlib import md5
+
+import requests
 
 
 class RClient(object):
@@ -50,7 +52,6 @@ class RClient(object):
 
 
 if __name__ == '__main__':
-    rc = RClient('931128603', '',)
+    rc = RClient('931128603', '', )
     im = open('tkcode', 'rb').read()
     print(rc.rk_create(im, 6113))
-

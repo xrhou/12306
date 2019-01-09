@@ -1,12 +1,15 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
+
 from collections import OrderedDict
+
 from inter.GetQueueCount import getQueueCount
 from inter.GetRepeatSubmitToken import getRepeatSubmitToken
 
 
 class checkOrderInfo:
 
-    def __init__(self, session, train_no, set_type, passengerTicketStrList, oldPassengerStr, station_dates, ticket_peoples):
+    def __init__(self, session, train_no, set_type, passengerTicketStrList, oldPassengerStr, station_dates,
+                 ticket_peoples):
         self.train_no = train_no
         self.set_type = set_type
         self.passengerTicketStrList = passengerTicketStrList

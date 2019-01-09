@@ -1,7 +1,9 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
+
 import json
-import socket
 import re
+import socket
+
 # s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # s.connect(('183.232.189.31', 80))
 # get_str = 'GET {0} HTTP/1.1\r\nConnection: close\r\n' \
@@ -39,7 +41,7 @@ def default_get_data():
            "Referer: {1}\r\n" \
            'User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36' \
            '\r\nAccept: */*\r\n' \
-           "Cookie: {2}\r\n\n"\
+           "Cookie: {2}\r\n\n" \
            '\r\n'
     # return 'GET {0} HTTP/1.1\r\nConnection: close\r\n' \
     #       'Host: kyfw.12306.cn\r\n' \
@@ -61,7 +63,7 @@ def default_post_data():
     """
     return "POST https://kyfw.12306.cn{0} HTTP/1.1\r\n" \
            "Host: kyfw.12306.cn\r\n" \
-           "Connection: close\r\n"\
+           "Connection: close\r\n" \
            "Origin: https://kyfw.12306.cn\r\n" \
            "X-Requested-With: XMLHttpRequest\r\n" \
            "Referer: {3}\r\n" \
@@ -69,10 +71,10 @@ def default_post_data():
            "Content-Type: application/x-www-form-urlencoded; charset=UTF-8\r\n" \
            "Accept: application/json, text/javascript, */*; q=0.01\r\n" \
            "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/11.0.1 Safari/604.3.5\r\n" \
-           "Content-Length: {2}\r\n"\
-           "Cookie: {4}\r\n\n"\
-           "{1}\r\n"\
-           # "\r\n"
+           "Content-Length: {2}\r\n" \
+           "Cookie: {4}\r\n\n" \
+           "{1}\r\n" \
+        # "\r\n"
 
 
 class socketUtils:
@@ -188,7 +190,9 @@ if __name__ == "__main__":
     train_date = "2018-08-03"
     from_station = "SZQ"
     to_station = "CSQ"
-    urls["select_url"]["req_url"] = "https://kyfw.12306.cn" + urls["select_url"]["req_url"].format(train_date, from_station, to_station)
+    urls["select_url"]["req_url"] = "https://kyfw.12306.cn" + urls["select_url"]["req_url"].format(train_date,
+                                                                                                   from_station,
+                                                                                                   to_station)
     result = so.send(urls=urls["select_url"])
     print(result)
 

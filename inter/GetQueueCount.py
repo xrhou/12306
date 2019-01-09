@@ -1,7 +1,9 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
+
 import datetime
 import time
 from collections import OrderedDict
+
 import wrapcache
 
 from config.ticketConf import _get_yaml

@@ -1,11 +1,11 @@
 # encoding=utf8
-import collections
-import json
+
 import os
 import re
 import sys
-import csv
+
 import requests
+
 from config import urlConf
 
 try:
@@ -13,6 +13,7 @@ try:
     sys.setdefaultencoding('utf-8')
 except NameError:
     pass
+
 
 class CDNProxy:
     def __init__(self, host=None):

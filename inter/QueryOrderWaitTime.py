@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 import copy
 import time
 
@@ -32,7 +32,8 @@ class queryOrderWaitTime:
                 break
             try:
                 queryOrderWaitTimeUrl = copy.deepcopy(self.session.urls["queryOrderWaitTimeUrl"])
-                queryOrderWaitTimeUrl["req_url"] = queryOrderWaitTimeUrl["req_url"].format(int(round(time.time() * 1000)))
+                queryOrderWaitTimeUrl["req_url"] = queryOrderWaitTimeUrl["req_url"].format(
+                    int(round(time.time() * 1000)))
                 queryOrderWaitTimeResult = self.session.httpClint.send(queryOrderWaitTimeUrl)
             except ValueError:
                 queryOrderWaitTimeResult = {}
@@ -74,9 +75,11 @@ class queryOrderWaitTime:
         except ValueError:
             queryMyOrderNoCompleteResult = {}
         if queryMyOrderNoCompleteResult:
-            if queryMyOrderNoCompleteResult.get("data", False) and queryMyOrderNoCompleteResult["data"].get("orderDBList", False):
+            if queryMyOrderNoCompleteResult.get("data", False) and queryMyOrderNoCompleteResult["data"].get(
+                    "orderDBList", False):
                 return queryMyOrderNoCompleteResult["data"]
-            elif queryMyOrderNoCompleteResult.get("data", False) and queryMyOrderNoCompleteResult["data"].get("orderCacheDTO", False):
+            elif queryMyOrderNoCompleteResult.get("data", False) and queryMyOrderNoCompleteResult["data"].get(
+                    "orderCacheDTO", False):
                 if queryMyOrderNoCompleteResult["data"]["orderCacheDTO"].get("message", False):
                     print(queryMyOrderNoCompleteResult["data"]["orderCacheDTO"]["message"]["message"])
                     raise ticketNumOutException(
@@ -113,7 +116,8 @@ class queryOrderWaitTime:
         }
         cancelNoCompleteMyOrderResult = self.session.httpClint.send(cancelNoCompleteMyOrderUrl,
                                                                     cancelNoCompleteMyOrderData)
-        if cancelNoCompleteMyOrderResult.get("data", False) and cancelNoCompleteMyOrderResult["data"].get("existError", "N"):
+        if cancelNoCompleteMyOrderResult.get("data", False) and cancelNoCompleteMyOrderResult["data"].get("existError",
+                                                                                                          "N"):
             print(ticket.CANCEL_ORDER_SUCCESS.format(sequence_no))
             time.sleep(2)
             return True

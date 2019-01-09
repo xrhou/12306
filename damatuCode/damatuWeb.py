@@ -1,11 +1,10 @@
 # -*- coding=utf-8 -*-
 
+import base64
 import hashlib
 import json
-import base64
-import requests
 
-from myException.balanceException import balanceException
+import requests
 
 
 def md5str(str):  # md5加密字符串
@@ -86,7 +85,7 @@ class DamatuApi():
                 'sign': self.getSign(url.encode(encoding="utf-8"))
                 }
         res = self.post('d2Url', data)
-        res = str(res,)
+        res = str(res, )
         jres = json.loads(res)
         if jres['ret'] == 0:
             # 注意这个json里面有ret，id，result，cookie，根据自己的需要获取

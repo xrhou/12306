@@ -1,4 +1,5 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
+
 import urllib
 from collections import OrderedDict
 
@@ -13,6 +14,7 @@ class autoSubmitOrderRequest:
     """
     快读提交订单通道
     """
+
     def __init__(self, session,
                  secretStr,
                  train_date,
@@ -23,7 +25,7 @@ class autoSubmitOrderRequest:
                  train_no,
                  stationTrainCode,
                  leftTicket,
-                 set_type,):
+                 set_type, ):
         self.set_type = set_type
         self.secretStr = urllib.unquote(secretStr)
         self.train_date = train_date
@@ -75,7 +77,7 @@ class autoSubmitOrderRequest:
         data = self.data_par()
         autoSubmitOrderRequestResult = self.session.httpClint.send(urls, data)
         if autoSubmitOrderRequestResult and \
-                autoSubmitOrderRequestResult.get("status", False) and\
+                autoSubmitOrderRequestResult.get("status", False) and \
                 autoSubmitOrderRequestResult.get("httpstatus", False) == 200:
             requestResultData = autoSubmitOrderRequestResult.get("data", {})
             if requestResultData:
@@ -117,5 +119,3 @@ class autoSubmitOrderRequest:
                 print("".join(autoSubmitOrderRequestResult.get("messages", "")))
             elif autoSubmitOrderRequestResult.get("validateMessages", ""):
                 print("".join(autoSubmitOrderRequestResult.get("validateMessages", "")))
-
-

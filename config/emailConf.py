@@ -1,9 +1,11 @@
 # -*- coding: utf8 -*-
+
 __author__ = 'MR.wen'
+import smtplib
 from email.header import Header
 from email.mime.text import MIMEText
+
 from config.ticketConf import _get_yaml
-import smtplib
 
 
 def sendEmail(msg):

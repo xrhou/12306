@@ -6,9 +6,7 @@ def time_to_minutes(time_str):
 
 def minutes_to_time(minutes):
     m = minutes % 60
-    if m<10:
-        return str(minutes / 60) + ":" + str("0"+str(m))
+    if m < 10:
+        return str(minutes / 60) + ":" + str("0" + str(m))
     else:
         return str(minutes / 60) + ":" + str(m)
-
-

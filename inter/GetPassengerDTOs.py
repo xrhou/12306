@@ -1,10 +1,12 @@
-# coding=utf-8
-from config.TicketEnmu import ticket
-from myException.PassengerUserException import PassengerUserException
+# -*- coding: utf-8 -*-
+
 import wrapcache
 
+from config.TicketEnmu import ticket
+from myException.PassengerUserException import PassengerUserException
+
 try:
-    xrange          # Python 2
+    xrange  # Python 2
 except NameError:
     xrange = range  # Python 3
 
@@ -14,6 +16,7 @@ class getPassengerDTOs:
     获取乘客信息
     :return:
     """
+
     def __init__(self, session, ticket_peoples, set_type, is_more_ticket_num):
         """
         :param session: 登录实例

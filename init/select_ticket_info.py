@@ -1,7 +1,8 @@
 # -*- coding=utf-8 -*-
+
 import datetime
-import random
 import os
+import random
 import socket
 import sys
 import threading
@@ -93,7 +94,8 @@ class select:
 
         print(u"*" * 50)
         print(u"检查当前python版本为：{}，目前版本只支持2.7.10-2.7.15".format(sys.version.split(" ")[0]))
-        print(u"12306刷票小助手，最后更新于2019.01.08，请勿作为商业用途，交流群号：286271084(已满)， 2群：649992274(已满)，请加3群(未满)， 群号：632501142、4群(未满)， 群号：606340519")
+        print(
+            u"12306刷票小助手，最后更新于2019.01.08，请勿作为商业用途，交流群号：286271084(已满)， 2群：649992274(已满)，请加3群(未满)， 群号：632501142、4群(未满)， 群号：606340519")
         if is_by_time:
             method_notie = u"购票方式：根据时间区间购票\n可接受最早出发时间：{0}\n可接受最晚抵达时间：{1}\n可接受最长旅途时间：{2}\n可接受列车类型：{3}\n" \
                 .format(minutes_to_time(departure_time), minutes_to_time(arrival_time), minutes_to_time(take_time),
@@ -197,7 +199,7 @@ class select:
             try:
                 num += 1
                 now = datetime.datetime.now()  # 感谢群里大佬提供整点代码
-                configCommon.checkSleepTime(self)   # 晚上到点休眠
+                configCommon.checkSleepTime(self)  # 晚上到点休眠
                 if self.order_model is 1:
                     sleep_time_s = 0.5
                     sleep_time_t = 0.6

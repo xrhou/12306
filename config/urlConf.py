@@ -1,5 +1,4 @@
-# coding=utf-8
-import random
+# -*- coding: utf-8 -*-
 
 import time
 
@@ -16,7 +15,7 @@ urls = {
         "is_logger": True,
         "is_json": True,
     },
-    "login": {   # 登录接口
+    "login": {  # 登录接口
         "req_url": "/passport/web/login",
         "req_type": "post",
         "Referer": "https://kyfw.12306.cn/otn/login/init",
@@ -29,7 +28,7 @@ urls = {
         "is_json": True,
 
     },
-    "left_ticket_init": {   # 登录接口
+    "left_ticket_init": {  # 登录接口
         "req_url": "/otn/leftTicket/init",
         "req_type": "post",
         "Referer": "https://kyfw.12306.cn/otn/login/init",
@@ -135,7 +134,7 @@ urls = {
         "is_logger": False,
         "is_json": False,
     },
-    "GetJS": {   # 订单页面js
+    "GetJS": {  # 订单页面js
         "req_url": "/otn/HttpZF/GetJS",
         "req_type": "get",
         "Referer": "https://kyfw.12306.cn/otn/confirmPassenger/initDc",
@@ -342,7 +341,8 @@ urls = {
         "req_type": "post"
     },
     "cdn_list": {
-        "req_url": "http://ping.chinaz.com/iframe.ashx?t=ping&callback=jQuery111304824429956769827_{}".format(int(round(time.time() * 1000))),
+        "req_url": "http://ping.chinaz.com/iframe.ashx?t=ping&callback=jQuery111304824429956769827_{}".format(
+            int(round(time.time() * 1000))),
         "req_type": "post"
     }
 }

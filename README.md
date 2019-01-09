@@ -74,8 +74,3 @@
     - @才
     - 以及所有为此项目提供pr的同学
 - [更新日志](Update.md)
-
-- 如果觉得项目还不错，可以考虑打赏一波
-    -
-    ![image](https://github.com/testerSunshine/12306/blob/master/uml/wx.jpeg?imageMogr2/auto-orient/strip)
-    ![image](https://github.com/testerSunshine/12306/blob/master/uml/zfb.jpeg?imageMogr2/auto-orient/strip)

@@ -1,11 +1,11 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
+
 import datetime
 import time
 from collections import OrderedDict
 
 import wrapcache
 
-from config.TicketEnmu import ticket
 from config.ticketConf import _get_yaml
 from inter.ConfirmSingleForQueueAsys import confirmSingleForQueueAsys
 
@@ -14,6 +14,7 @@ class getQueueCountAsync:
     """
     排队
     """
+
     def __init__(self,
                  session,
                  train_no,
@@ -40,7 +41,7 @@ class getQueueCountAsync:
         self.passengerTicketStr = passengerTicketStr
         self.oldPassengerStr = oldPassengerStr
         self.result = result
-        self.ifShowPassCodeTime=ifShowPassCodeTime
+        self.ifShowPassCodeTime = ifShowPassCodeTime
 
     def data_par(self):
         """
@@ -96,7 +97,7 @@ class getQueueCountAsync:
                     c = confirmSingleForQueueAsys(session=self.session,
                                                   passengerTicketStr=self.passengerTicketStr,
                                                   oldPassengerStr=self.oldPassengerStr,
-                                                  result=self.result,)
+                                                  result=self.result, )
                     print(u"验证码提交安全期，等待{}MS".format(self.ifShowPassCodeTime))
                     time.sleep(self.ifShowPassCodeTime)
                     c.sendConfirmSingleForQueueAsys()
@@ -111,6 +112,3 @@ class getQueueCountAsync:
             else:
                 if "validateMessages" in getQueueCountAsyncResult and getQueueCountAsyncResult["validateMessages"]:
                     print(str(getQueueCountAsyncResult["validateMessages"]))
-
-
-

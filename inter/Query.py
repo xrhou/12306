@@ -1,15 +1,14 @@
-# coding=utf-8
-import copy
-import threading
-import time
+# -*- coding: utf-8 -*-
 
+import copy
 import random
 
 import wrapcache
+
 from config import urlConf
 from config.TicketEnmu import ticket
-from myUrllib.httpUtils import HTTPClient
 from config.configCommon import seat_conf_2
+from myUrllib.httpUtils import HTTPClient
 from utils.timeUtil import time_to_minutes
 
 
@@ -94,9 +93,11 @@ class query:
                 continue
             value = station_ticket.get("data", "")
             if not value:
-                print (u'{0}-{1} 车次坐席查询为空,ip网络异常，查询url: https://kyfw.12306.cn{2}, 可以手动查询是否有票'.format(self.from_station_h,
-                                                                                               self.to_station_h,
-                                                                                               select_url["req_url"]))
+                print (
+                    u'{0}-{1} 车次坐席查询为空,ip网络异常，查询url: https://kyfw.12306.cn{2}, 可以手动查询是否有票'.format(self.from_station_h,
+                                                                                                  self.to_station_h,
+                                                                                                  select_url[
+                                                                                                      "req_url"]))
             else:
                 result = value.get('result', [])
                 if result:
@@ -161,7 +162,7 @@ class query:
                                         }
                 else:
                     print(u"车次配置信息有误，或者返回数据异常，请检查 {}".format(station_ticket))
-        return {"code": ticket.FAIL_CODE, "status": False, "cdn": self.httpClint.cdn,}
+        return {"code": ticket.FAIL_CODE, "status": False, "cdn": self.httpClint.cdn, }
 
 
 if __name__ == "__main__":

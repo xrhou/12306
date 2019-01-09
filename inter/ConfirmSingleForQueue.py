@@ -1,5 +1,5 @@
-# coding=utf-8
-import datetime
+# -*- coding: utf-8 -*-
+
 import time
 
 from config.ticketConf import _get_yaml
@@ -10,7 +10,8 @@ from inter.QueryOrderWaitTime import queryOrderWaitTime
 
 
 class confirmSingleForQueue:
-    def __init__(self, session, ifShowPassCodeTime, is_node_code, token, set_type, ticket_peoples, ticketInfoForPassengerForm,
+    def __init__(self, session, ifShowPassCodeTime, is_node_code, token, set_type, ticket_peoples,
+                 ticketInfoForPassengerForm,
                  oldPassengerStr, passengerTicketStrList):
         self.session = session
         self.ifShowPassCodeTime = ifShowPassCodeTime

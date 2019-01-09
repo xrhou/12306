@@ -1,7 +1,7 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
+
 import copy
 import random
-import time
 
 
 def getPassCodeNewOrderAndLogin(session, imgType):

@@ -1,4 +1,5 @@
-# encoding=utf8
+# encoding=utf-8
+
 import os
 import random
 import socket

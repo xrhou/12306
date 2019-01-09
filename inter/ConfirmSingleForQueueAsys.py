@@ -1,6 +1,5 @@
-# coding=utf-8
-import json
-import urllib
+# -*- coding: utf-8 -*-
+
 from collections import OrderedDict
 
 from inter.QueryOrderWaitTime import queryOrderWaitTime
@@ -10,6 +9,7 @@ class confirmSingleForQueueAsys:
     """
     订单快读排队
     """
+
     def __init__(self,
                  session,
                  passengerTicketStr,
