@@ -2,4 +2,5 @@
 *.pyc
 *.yaml
 *.log
-.idea/
+.idea
+tkcode.png
