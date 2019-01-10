@@ -52,7 +52,7 @@ set:
   # - "李四"
   ticke_peoples:
     - "侯秀荣"
-    #- "杨雪瓶"
+    #- "杨雪"
   # 12306登录账号(list)
   12306account:
     - user: "houxiurong"
